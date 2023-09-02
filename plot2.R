@@ -16,15 +16,12 @@ needed_data$DateandTime <- strptime(needed_data$DateandTime,
 ## convert character into numeric
 needed_data$Global_active_power <- as.numeric(needed_data$Global_active_power)
 
-t <- needed_data$DateandTime
-
 ##open png graphic device and plotting graph(plot1)
-# png(filename='plot2.png', width = 480, height = 480)
-plot(needed_data$DateandTime,
-     needed_data$Global_active_power, 
+png(filename='plot2.png', width = 480, height = 480)
+plot(needed_data$Global_active_power, 
      xlab = '',
      ylab = 'Global Active Power (kilowatts)',
      type = 'l',
      xaxt = 'n')
-axis(side = 1, at=1:3)
-# dev.off()
+axis(side=1, at=c(1, 1440, 2880), labels=c('Thu', 'Fri', 'Sat'))
+dev.off()
