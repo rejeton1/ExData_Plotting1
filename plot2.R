@@ -16,7 +16,7 @@ needed_data$DateandTime <- strptime(needed_data$DateandTime,
 ## convert character into numeric
 needed_data$Global_active_power <- as.numeric(needed_data$Global_active_power)
 
-##open png graphic device and plotting graph(plot1)
+##open png graphic device and plotting graph(plot2)
 png(filename='plot2.png', width = 480, height = 480)
 plot(needed_data$Global_active_power, 
      xlab = '',
